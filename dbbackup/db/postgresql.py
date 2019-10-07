@@ -10,7 +10,7 @@ class PgDumpConnector(BaseCommandDBConnector):
     extension = 'psql'
     dump_cmd = 'pg_dump'
     restore_cmd = 'psql'
-    single_transaction = True
+    single_transaction = False
     drop = True
 
     def run_command(self, *args, **kwargs):
@@ -89,7 +89,7 @@ class PgDumpBinaryConnector(PgDumpConnector):
     extension = 'psql.bin'
     dump_cmd = 'pg_dump'
     restore_cmd = 'pg_restore'
-    single_transaction = True
+    single_transaction = False
     drop = True
 
     def _create_dump(self):
